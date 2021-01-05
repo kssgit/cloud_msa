@@ -56,6 +56,7 @@ console.log(add10(2) , add10);
 //클로져
 function multi(n){
     return function(){
+
         return n*=n;
     }
 }
@@ -64,3 +65,20 @@ let multi5 = multi(5);
 let multi10 = multi(10);
 console.log(multi5, multi5());
 console.log(multi10 ,  multi10());
+
+//재귀함수 ( 잘쓰지않는다 )
+let result = 1 ;
+function factorial(n){
+    if(n==0){
+        console.log('호출 끝');
+    }else{
+        console.log('호출'+ n);
+        result *=n;
+        factorial(n-1);
+        
+    }
+
+    return result;
+}
+
+console.log(factorial(10));
