@@ -37,6 +37,7 @@ document.getElementById("data").innerHTML = "<h3>variable x =" + x +"</h3>";
  let stringV = "10";
  let booleanV = true;
  console.log("data type ", intV, floatV , stringV , booleanV);
-//??
+//
+console.log("type :", typeof intV, typeof floatV, typeof stringV, typeof booleanV);
 
 

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project List</title>
+
+  <script defer>
+    const projects = [
+      { pno: "p001", pname: "전자인사관리시스템", pdesc: "기업내 인사정보를 관리하는 시스템" },
+      { pno: "p002", pname: "도서관리시스템", pdesc: "기업내 자기개발을 위한 도서대여 시스템" },
+      { pno: "p003", pname: "IaaS 서비스", pdesc: "Infa as a Service" },
+      { pno: "p004", pname: "PaaS 서비스", pdesc: "Platform as a Service" },
+      { pno: "p005", pname: "SaaS", pdesc: "Soft as a Service" },
+    ]
+
+
+    function radioClick() {
+      for (i = 0; i < projects.length; i++) {
+        if (document.list.dispChk[i].checked) {
+          document.getElementById("pno").value = projects[i].pno;
+          document.getElementById("pname").value = projects[i].pname;
+          document.getElementById("pdesc").value = projects[i].pdesc;
+          break;
+        }
+      }
+    }
+
+    function displayData() {
+      for (i = 0; i < projects.length; i++) {
+        document.write("<tr>");
+        document.write("<td><input type='radio' name='dispChk' onClick='radioClick()'></td>");
+        document.write("<td>" + projects[i].pname + "</td>");
+        document.write("</tr>");
+      }
+    }
+  </script>
+
+</head>
+
+<body>
+  <h1>Project List</h1>
+  <table border=1>
+    <tr>
+      <th>선택</th>
+      <th>프로젝트명</th>
+      <form name="list">
+        <script defer>
+
+          displayData();
+        </script>
+      </form>
+    </tr>
+
+  </table>
+
+  프로젝트 번호 <input type="text" id="pno"> <br>
+  프로젝트 이름 <input type="text" id="pname"> <br>
+  프로젝트 설명 <input type="text" id="pdesc"> <br>
+
+</body>
+
+</html>
