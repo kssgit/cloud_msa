@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </script>
+
+
+</head>
+
+<body>
+    <a href="http://jquery.com/">jQuery</a>
+    <h1>JavaScript Example</h1>
+    <button id="alertButton">Alert!</button>
+
+    <script>
+        $(document).ready(function () {
+
+            alert("jQuery start")
+
+        });
+
+        $(document).ready(function () {
+            $("a").click(function (event) {
+                alert("The link will no longer take you to jquery.com");
+                event.preventDefault(); //해당 태그의 이벤트를 막는다 (현재는 a태그를 통해 이동되는 것 막는다)
+            });
+        });
+
+        $(document).ready(function () {
+            $("#alertButton").on("click", function () {
+                alert("Button Click....")
+            })
+        });
+    </script>
+
+
+</body>
+
+</html>

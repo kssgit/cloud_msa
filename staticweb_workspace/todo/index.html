@@ -8,9 +8,16 @@
     </link>
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
     </link>
-    <title>일정관</title>
+    <title>일정관리</title>
+    <script>
+        //임시 json형태의 배열 자료 
+        let todos = [{ todoNum: 1, title: "일정1" }, { todoNum: 2, title: "일정2" }, { todoNum: 3, title: "일정3" }, { todoNum: 4, title: "일정4" }];
+    </script>
     <link rel="stylesheet" href="./cs/index.css">
     </link>
+
+
+    <script src="./js/todo.js"></script>
 
 </head>
 
@@ -22,8 +29,8 @@
     <!-- todo input -->
     <div class="inputBox shadow">
         <form>
-            <input type="text" placeholder="일정을 입력하세요" />
-            <span class="addContainer">
+            <input id="todoInput" type="text" placeholder="일정을 입력하세요" />
+            <span class="addContainer" onclick="todoInputHandler()">
                 <i aria-hidden="true" class="addBtn fa fa-plus">
 
                 </i>
@@ -32,19 +39,15 @@
     </div>
     <!-- todo list -->
     <section>
-        <ul>
-            <li class="shadow">
-                <i aria-hidden="true" class="checkBtn fa fa-check"></i>
-                일정1
-                <span type="button" class="removeBtn">
-                    <i aria-hidden="true" class="fa fa-trash-o"></i>
-                </span>
-            </li>
+        <ul id="todoList">
+            <script>
+                displayList();
+            </script>
         </ul>
     </section>
     <!-- clear all -->
     <div class="clearAllContainer">
-        <span class="clearAllBtn">Clear All</span>
+        <span class="clearAllBtn" onclick="todoClear()">Clear All</span>
     </div>
 </body>
 
