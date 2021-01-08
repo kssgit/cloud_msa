@@ -49,3 +49,6 @@ function displayList() {
   });
   todoList.innerHTML = dataList;
 }
+
+//JSON.stringify({ todoNum: key, title: addTitle }) json형태의 자료형을 string으로 변경 -- 많이 쓰인다 
+//JSON.parse(localStorage.getItem(key)) JSON형태로 데이터 받으려면  
