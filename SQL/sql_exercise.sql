@@ -43,7 +43,7 @@ where FIRST_NAME ='Ellen';
 select ename 이름, deptno 부서번호, sal 월급
 
 
-select first_name, department_id, salary 
+select first_name 이름, department_id 부서번호, salary 급여 
 from employees
 where HIRE_DATE='08/04/21'
 ;
@@ -66,7 +66,7 @@ where HIRE_DATE >= '08/04/21';
 
 --부서번호와 20,30번을 제외한 모든 사람의 이름, 사원번호, 부서번호를 출력하라.
 
-select first_name, employee_id, department_id 
+select first_name 이름, employee_id 사원번호, department_id 부서번호
 from employees
 where department_id not in (20,30)
 ;
