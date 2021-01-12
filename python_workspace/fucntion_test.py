@@ -57,7 +57,7 @@ def mul(*values):
 print(mul(3, 4, 5, 6))
 
 # tuple : 값 변경하지 않는 list tuple변수=(value , value , ...) 상수 값 저장
-# return 할 때 많이 쓰인다
+# return 할 때 많이 쓰인다( 여러가지의 데이타 타입을 리턴할 경우)
 # return (max , min )
 tuple_data = (10, 20, 30, 40)
 list_data = [10, 20, 30, 40]
@@ -71,3 +71,29 @@ for ldata in list_data:
 
 list_data[0] = 100
 # tuple_data[0] = 100 #TypeError : 값변경 못함
+# tuple : function에서 다수의 데이터 리턴시 사용
+
+print()
+
+
+def test_tuple():
+    return (10, 20)
+
+
+a, b = test_tuple()  # a,b 상수값이아닌 튜플에서 값을 넘겨받은 변수이다
+a = 30  # 값변경 가능
+print("{0}+{1}={2}".format(a, b, a+b))
+
+# 람다 : lambda argumentlist(매게변수) : retrun  -  1회성 익명 함수
+list_input = [1, 2, 3, 4, 5]
+output_list = map(lambda data: data*data, list_input)  # js map과 같은 기능
+print(list_input)
+print(output_list)  # map객체
+print(list(output_list))
+
+output_filter = filter(lambda data: data < 3, list_input)
+print(list_input)
+print(output_filter)
+print(list(output_filter))
+
+# lambda x,y : (x*y , x+y) #여러개의 매서드 , 여러개의 리턴 값 가능
