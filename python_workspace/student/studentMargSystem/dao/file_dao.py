@@ -1,5 +1,5 @@
 import os.path
-import entity.student.Student as Student
+from entity.student import Student
 
 
 # 프로그램 종료시 list students "students.dat" 파일 저장
@@ -24,8 +24,8 @@ def init_data_load():
             data = read_file.readline()
             if len(data.split("|")) == 2:
                 student = data.split("|")[1].strip("\n").split(",")  # 문자열 데이터
-                students.append(student[0].strip(),  student[1].strip(
-                ), int(student[2].strip()), student[3].strip())
+                students.append(Student(student[0].strip(),  student[1].strip(
+                ), int(student[2].strip()), student[3].strip()))
             if not data:
                 break
         read_file.close()

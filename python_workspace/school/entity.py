@@ -3,9 +3,14 @@
 
 
 class Person:
+
+    t = "나는 부모클래스"
+    a = 0
+
     def __init__(self, id, name):  # Person() : 생성자 호출 시 내부적으로 호출       self 반드시 써야 한다 오버라이드
         self.id = id               # 객체생성 시 초기화 구현
         self.name = name           # {"id":id , "name": name}
+        Person.a += 1
 
     def info(self):  # 객체 operation : member method
         print("아이디: {0} 이름: {1}".format(self.id, self.name))
@@ -20,6 +25,19 @@ class Person:
             return True
         return False
 
+    # 클래스 메서드
+    @classmethod
+    def classMethod(cls):  # 클래스이름.메서드 : Student.classMethod()
+        return cls.t
+
+    @classmethod
+    def class_method(cls):
+        return "{0}명".format(cls.a)
+
+    # 스테틱 메서드
+    @staticmethod
+    def staticMethod():
+        return Person.t
 # Person의 Sub Class
 # 파이썬은 super클래스가 아니라 메서드이기 때문에 ()써야 한다
 
@@ -27,6 +45,7 @@ class Person:
 class Student(Person):
     staticVariable = 0  # 클래스 변수 : 객체생성하지 않고 클래스 이름으로 참조  -->java  static
     # 클래스가 로드 되는 시점에 생성
+    t = "나는 자식클래스"
 
     def __init__(self, id, name, major):
         super().__init__(id, name)  # Super Class의 생성자 호출해서 초기화 super() 괄호 반드시!
@@ -42,11 +61,6 @@ class Student(Person):
 
     def __eq__(self, value):
         return self.__str__() == value.__str__()
-
-    # 스테틱 메서드
-    @classmethod
-    def classMethod(cls):  # 클래스이름.메서드 : Student.classMethod()
-        pass
 
 
 class Teacher (Person):
@@ -134,3 +148,11 @@ else:
 # __del__
 #
 #
+
+print(Student.classMethod())
+print(Student.staticMethod())
+
+
+p1 = Person("12", "qwe")
+p2 = Person("qw", "qwe")
+print(Person.class_method())
