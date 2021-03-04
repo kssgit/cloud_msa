@@ -40,8 +40,7 @@ onDecrease = () => {
               increase={this.onIncrease} 
               decrease={this.onDecrease}/>
         <ACounter count = {this.state.count} 
-              increase={this.onIncrease} 
-              decrease={this.onDecrease}/>
+              />
       
       </div>
     );

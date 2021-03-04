@@ -6,6 +6,8 @@ class App extends Component {
   formatName(user) {
     return user.firstName+' '+user.lastName
   }
+
+  
   render() {
     
     function formatName(user) {

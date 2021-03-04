@@ -1,16 +1,19 @@
-import React, { Component } from 'react';
-
-class ACounter extends Component {
-    render() {
-        const {count, increase, decrease} = this.props;
-        return (
-            <div>
-                <h1>ACount : {count}</h1>
-                <button onClick={increase}>+</button>
-                <button onClick={decrease}>-</button>
-            </div>
-        );
+import React from 'react';
+function sum(count){
+    let sum =0;
+    for(let i = 1; i< count+1 ; i++){
+        sum +=i;
     }
+    return sum;
+}
+
+
+function ACounter(props) {
+    return (
+        <div>
+            <h2>0~{props.count}의 합은 : {sum(props.count)}</h2>
+        </div>
+    );
 }
 
 export default ACounter;

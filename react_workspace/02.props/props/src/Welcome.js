@@ -26,6 +26,7 @@ function Welcome(props){
     return (
         <div>
             <h1 style ={props.style}>Hello , {props.name} == &gt; {props.children}</h1>
+            {/* content 속성은 props.children으로  */}
         </div>
     );
 }
