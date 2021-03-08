@@ -3,11 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import 'semantic-ui-css/semantic.min.css'
+import { Provider } from 'mobx-react';
+import BookStore from './store/BookStore';
 
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider BookStore={BookStore}>
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
 );
 

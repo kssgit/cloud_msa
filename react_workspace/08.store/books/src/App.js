@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import  { Search,Grid} from 'semantic-ui-react'
+import BookDetail from './component/BookDetail';
+import BookList from './component/BookList';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  
+
+  render() {
+    return (
+      <Grid columns={2}>
+          <Grid.Row>
+            <Grid.Column width={6}>
+              <Search
+          
+              />
+            </Grid.Column>
+          </Grid.Row>
+
+          <Grid.Column>
+            <BookList />
+          </Grid.Column>
+
+          <Grid.Column>
+            <BookDetail />
+          </Grid.Column>
+       
+
+      </Grid>
+    );
+  }
 }
 
 export default App;
