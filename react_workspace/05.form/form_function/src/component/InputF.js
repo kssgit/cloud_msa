@@ -2,12 +2,10 @@ import React,{useState} from 'react';
 import {Button,Form , Input} from 'semantic-ui-react'
 
 function InputF(props) {
-    const [value , setValue] =useState("");
+    const [value , setValue,InputSubmit] =useState("");
     
     return (
-        <Form onSubmit={(event)=>{alert(value);
-                event.preventDefault();
-            }}>
+        <Form onSubmit={InputSubmit()}>
             <Input placeholder="name" onChange={(event)=>{setValue(event.target.value)}} ></Input>
             <Button type='submit'>Submit</Button>
         </Form>

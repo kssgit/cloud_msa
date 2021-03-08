@@ -8,6 +8,7 @@ function SelectF(props) {
         alert('Your favorite flavor is: ' + value);
         e.preventDefault();
     }
+    //data
     const handleChange=(e,data)=>{
         console.log(e, data)
         setValue(data.value);
@@ -27,6 +28,7 @@ function SelectF(props) {
             // </Form>
             <Form onSubmit={handleSubmit}>
                 <Select value={value} options={data} 
+                //data를 같이 넘겨주면 클릭한 value값도 같이 넘겨준다
                 onChange={(e,data)=>{handleChange(e,data)}}/> 
                 <Button type='submit'>Submit</Button>
             </Form>
