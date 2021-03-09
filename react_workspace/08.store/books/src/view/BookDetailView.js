@@ -1,14 +1,10 @@
-import { inject, observer } from 'mobx-react';
-import React, { Component } from 'react';
+import React from 'react';
 import { Card, Image} from 'semantic-ui-react'
 
-@inject("BookStore")
-@observer
-class Bookdetail extends Component {
-    render() {
-        const {book} = this.props.BookStore;
-        return (
-            <Card>
+function BookDetailView(props) {
+    const {book} =props
+    return (
+        <Card>
             <Image src={book.imgUrl} wrapped ui={false} />
             <Card.Content>
               <Card.Header>{book.title}</Card.Header>
@@ -21,8 +17,7 @@ class Bookdetail extends Component {
               </Card.Description>
             </Card.Content>
           </Card>
-        );
-    }
+    );
 }
 
-export default Bookdetail;
+export default BookDetailView;

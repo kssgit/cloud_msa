@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import  { Search,Grid} from 'semantic-ui-react'
-import BookDetail from './component/BookDetail';
-import BookList from './component/BookList';
+import BookContainer from './container/BookContainer';
+import BookListContainer from './container/BookListContainer';
 
 class App extends Component {
   
@@ -18,11 +18,11 @@ class App extends Component {
           </Grid.Row>
 
           <Grid.Column>
-            <BookList />
+            <BookListContainer />
           </Grid.Column>
 
           <Grid.Column>
-            <BookDetail />
+            <BookContainer />
           </Grid.Column>
        
 

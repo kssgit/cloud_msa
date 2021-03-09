@@ -6,11 +6,10 @@ function TodoInput(props) {
 
     return (
         <Form onSubmit={(e)=>{
-            InputSubmit();
+            InputSubmit(e);
             e.preventDefault();
-
         }}>
-            <Input size='large' placeholder='Search...' onChange={(e)=>InputTodoList(e.target.value)}/>
+            <Input size='large' placeholder='Title...' onChange={(e)=>InputTodoList(e.target.value)}/>
             <Button type='submit' icon='hand pointer outline' size='large'></Button>
         </Form>
     );

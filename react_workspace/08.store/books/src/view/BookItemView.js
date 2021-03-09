@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import   {Item}   from 'semantic-ui-react'
 
-class BookItem extends Component {
+class BookItemView extends Component {
     render() {
         const {book , bookSelect} =this.props;
         return (
@@ -17,4 +17,4 @@ class BookItem extends Component {
     }
 }
 
-export default BookItem;
+export default BookItemView;

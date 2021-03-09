@@ -12,25 +12,25 @@ function App(props) {
   
   const InputTodoList=(t)=>{
     setTitle(t);
-    
   }
+
   const InputSubmit =()=>{
     setTodoNum(todoNum+1);
     todoList.push({title:title,todoNum:todoNum});
     setTodoList(todoList);
-    console.log(todoList);
+    //console.log(todoList);
   }
 
   const hadleDelete=(e,index)=>{
     todoList.splice(index,1);
     setTodoList(todoList);
-    console.log(todoList);
+    //console.log(todoList);
   }
 
   const allClear=()=>{
-   
     setTodoList([]);
   }
+
   return (
     <div>
       <Header as='h1' content='Todo It!!' textAlign='center'/>
