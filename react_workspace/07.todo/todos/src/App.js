@@ -16,8 +16,7 @@ function App(props) {
 
   const InputSubmit =()=>{
     setTodoNum(todoNum+1);
-    todoList.push({title:title,todoNum:todoNum});
-    setTodoList(todoList);
+    setTodoList(todoList.concat({title:title,todoNum:todoNum}));
     //console.log(todoList);
   }
 

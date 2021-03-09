@@ -4,15 +4,10 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-import 'semantic-ui-css/semantic.min.css'//시멘틱 UI
-
-import {Provider} from 'mobx-react';
-import TodoStore from './store/TodoStore';
-
 ReactDOM.render(
-  <Provider TodoStore={TodoStore}>
+  <React.StrictMode>
     <App />
-  </Provider>,
+  </React.StrictMode>,
   document.getElementById('root')
 );
 
