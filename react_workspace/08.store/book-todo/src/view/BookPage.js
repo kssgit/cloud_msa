@@ -1,14 +1,11 @@
-import React, { Component } from 'react';
-import  { Search,Grid} from 'semantic-ui-react'
-import BookContainer from './container/BookContainer';
-import BookListContainer from './container/BookListContainer';
+import React from 'react';
+import {Grid} from 'semantic-ui-react';
+import BookContainer from '../container/BookContainer';
+import BookListContainer from '../container/BookListContainer';
 
-class App extends Component {
-  
-
-  render() {
+function BookPage(props) {
     return (
-      <Grid columns={2}>
+        <Grid columns={2}>
           <Grid.Row>
             <Grid.Column width={6}>
             </Grid.Column>
@@ -21,7 +18,6 @@ class App extends Component {
           </Grid.Column>
       </Grid>
     );
-  }
 }
 
-export default App;
+export default BookPage;
