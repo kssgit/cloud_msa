@@ -1,11 +1,7 @@
-from rest_framework import serializers, viewsets
+from rest_framework import serializers
 from .models import Todo
 
 class TodoSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Todo
         fields=['id','title']
-
-class TodoViewSet(viewsets.ModelViewSet):
-    queryset  = Todo.object.all()
-    serializer_class =TodoSerializer

@@ -15,24 +15,25 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-from rest_framework import routers
+# from rest_framework import routers
 from member import views
-from rest_framework_swagger.views import get_swagger_view
+# from rest_framework_swagger.views import get_swagger_view
 
 #swagger
-doc_view = get_swagger_view(title='Member API')
+# doc_view = get_swagger_view(title='Member API')
 
 
-router = routers.DefaultRouter()
-router.register(r'members',views.MemberViewSet) 
+# router = routers.DefaultRouter()
+# router.register(r'members',views.MemberViewSet) 
 # r 은 정규표현식으로 작성할 때
 
 #app_name = 'members'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include(router.urls)),
-    path('api/doc/',doc_view),
+    path('api/members/',include('member.urls')),
+    # path('api/', include(router.urls)),
+    # path('api/doc/',doc_view),
     #path('api/v1/',include((router.urls,'members'),namespace='api')),
     #path('api_admin/', include('rest_framework.urls', namespace='api')),
     #api/members 로 요청을 하면 MemberViewSet클래스가 응답되어 json형태로 
